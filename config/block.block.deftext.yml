@@ -1,0 +1,53 @@
+uuid: bbff8bfe-c82f-44d3-b8a7-f76a6f4a66a0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8eba68f4-ce0f-45ad-a7b5-fd36f41d7461'
+  module:
+    - block_content
+    - context
+    - domain
+  theme:
+    - test
+id: deftext
+theme: test
+region: ultimenu_main_navigation_link_2
+weight: 0
+provider: null
+plugin: 'block_content:8eba68f4-ce0f-45ad-a7b5-fd36f41d7461'
+settings:
+  id: 'block_content:8eba68f4-ce0f-45ad-a7b5-fd36f41d7461'
+  label: 'Def text'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  context:
+    id: context
+    negate: null
+    values: ''
+  domain:
+    id: domain
+    negate: false
+    context_mapping:
+      domain: '@domain.current_domain_context:domain'
+    domains:
+      dudcs_lndo_site: dudcs_lndo_site

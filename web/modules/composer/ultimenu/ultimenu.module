@@ -1,0 +1,143 @@
+<?php
+
+/**
+ * @file
+ * Build Ultimenu blocks based on menu, and their regions on enabled menu items.
+ */
+
+use Drupal\Core\Extension\Extension;
+
+/**
+ * Provides a convenient shortcut for procedural hooks.
+ *
+ * @return class
+ *   The Ultimenu class instances.
+ */
+function ultimenu($key = 'manager') {
+  static $manager;
+  static $skin;
+
+  if (!isset($manager)) {
+    $manager = \Drupal::service('ultimenu.manager');
+  }
+
+  switch ($key) {
+    case 'skin':
+      if (!isset($skin)) {
+        $skin = \Drupal::service('ultimenu.skin');
+      }
+      return $skin;
+
+    default:
+      return $manager;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ultimenu_theme($existing, $type, $theme, $path) {
+  return [
+    'ultimenu' => [
+      'render element' => 'element',
+      'file' => 'ultimenu.theme.inc',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_library_info_build().
+ */
+function ultimenu_library_info_build() {
+  return ultimenu('skin')->libraryInfoBuild();
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function ultimenu_library_info_alter(&$libraries, $extension) {
+  if ($extension === 'ultimenu') {
+    ultimenu()->libraryInfoAlter($libraries, $extension);
+  }
+}
+
+/**
+ * Implements hook_system_info_alter().
+ */
+function ultimenu_system_info_alter(&$info, Extension $file, $type) {
+  ultimenu()->systemInfoAlter($info, $file, $type);
+}
+
+/**
+ * Implements hook_themes_uninstalled().
+ */
+function ultimenu_themes_uninstalled($theme_list) {
+  ultimenu('skin')->clearCachedDefinitions(TRUE);
+}
+
+/**
+ * Checks if we are using the default theme.
+ */
+function _ultimenu_is_applicable() {
+  static $applicable;
+  if (!isset($applicable)) {
+    $theme = \Drupal::theme()->getActiveTheme()->getName();
+    $applicable = ultimenu()->getThemeDefault() == $theme;
+  }
+  return $applicable;
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function ultimenu_preprocess_html(&$variables) {
+  if (_ultimenu_is_applicable()) {
+    $variables['attributes']['class'][] = 'is-ultimenu-canvas';
+
+    // If off-canvas is enabled for both mobile and desktop, add `active`
+    // class, else it means menu item link is hoverable for desktop.
+    $active = ultimenu()->getSetting('goodies.off-canvas-all') ? 'active' : 'hover';
+    $variables['attributes']['class'][] = 'is-ultimenu-canvas--' . $active;
+  }
+}
+
+/**
+ * Returns the path.
+ *
+ * @todo use DI when min D9.3.
+ */
+function ultimenu_get_path($type, $name, $absolute = FALSE) {
+  $function = 'drupal_get_path';
+  if (\Drupal::hasService('extension.path.resolver')) {
+    $path = \Drupal::service('extension.path.resolver')->getPath($type, $name);
+  }
+  else {
+    $path = is_callable($function) ? $function($type, $name) : '';
+  }
+  return $absolute ? base_path() . $path : $path;
+}
+
+/**
+ * Implements hook_help().
+ */
+function ultimenu_help($route_name) {
+  if ($route_name == 'help.page.ultimenu') {
+    $items = [
+      'README',
+      'CONFIGURATION',
+      'STYLING',
+      'TROUBLESHOOTING',
+      'UPDATING',
+      'FAQ',
+      'MAINTAINERS',
+    ];
+
+    $output = '';
+    foreach ($items as $key) {
+      $output .= file_get_contents(dirname(__FILE__) . "/docs/{$key}.md");
+    }
+
+    return function_exists('blazy_parse_markdown') ? blazy_parse_markdown($output) : '<pre>' . $output . '</pre>';
+  }
+  return '';
+}

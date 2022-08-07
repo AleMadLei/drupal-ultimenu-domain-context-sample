@@ -1,0 +1,14 @@
+uuid: 43b9bdbe-277f-4daa-96fd-6f886d6dc3c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.dudcs_lndo_site
+  module:
+    - domain_access
+id: domain_access_add_action.dudcs_lndo_site
+label: 'Add selected content to the Main Site domain'
+type: node
+plugin: domain_access_add_action
+configuration:
+  domain_id: dudcs_lndo_site

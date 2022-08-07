@@ -1,0 +1,57 @@
+uuid: 3761d10f-2a3c-4902-b877-7da7e117b67e
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - domain
+    - ultimenu
+  theme:
+    - test
+id: ultimenumainnavigation
+theme: test
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'ultimenu_block:ultimenu-main-navigation'
+settings:
+  id: 'ultimenu_block:ultimenu-main-navigation'
+  label: 'Ultimenu: Main Navigation'
+  label_display: '0'
+  provider: ultimenu
+  ajaxify: false
+  regions: {  }
+  skin: module|ultimenu--dark
+  orientation: ultimenu--htb
+  submenu: false
+  submenu_position: ''
+  canvas_off: null
+  canvas_on: null
+  canvas_skin: null
+visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  context:
+    id: context
+    negate: null
+    values: ''
+  domain:
+    id: domain
+    negate: false
+    context_mapping:
+      domain: '@domain.current_domain_context:domain'
+    domains:
+      dudcs_lndo_site: dudcs_lndo_site

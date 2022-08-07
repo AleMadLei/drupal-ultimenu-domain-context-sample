@@ -1,0 +1,25 @@
+uuid: 702761fb-dc5d-46fe-b2b6-e4f72bfa4cd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_domain_source
+    - node.type.page
+id: node.page.field_domain_source
+field_name: field_domain_source
+entity_type: node
+bundle: page
+label: 'Domain Source'
+description: 'Select the canonical domain for this content.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:domain'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: weight
+      direction: ASC
+field_type: entity_reference

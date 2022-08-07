@@ -1,0 +1,14 @@
+uuid: e77740a3-eb5e-4318-93d7-ec155621c783
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.dudcs_lndo_site
+  module:
+    - domain_access
+id: domain_access_add_editor_action.dudcs_lndo_site
+label: 'Add editors to the Main Site domain'
+type: user
+plugin: domain_access_add_editor_action
+configuration:
+  domain_id: dudcs_lndo_site

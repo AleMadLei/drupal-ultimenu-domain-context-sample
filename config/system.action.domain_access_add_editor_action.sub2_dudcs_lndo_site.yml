@@ -1,0 +1,14 @@
+uuid: ee8df091-3401-44cf-9752-a4f76a925cce
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.sub2_dudcs_lndo_site
+  module:
+    - domain_access
+id: domain_access_add_editor_action.sub2_dudcs_lndo_site
+label: 'Add editors to the Sub Site 2 domain'
+type: user
+plugin: domain_access_add_editor_action
+configuration:
+  domain_id: sub2_dudcs_lndo_site

@@ -1,0 +1,11 @@
+uuid: 7852e57b-1fd3-465b-9355-ced70452dbea
+langcode: en
+status: true
+dependencies: {  }
+id: sub2_dudcs_lndo_site
+domain_id: 12108637
+hostname: sub2.dudcs.lndo.site
+name: 'Sub Site 2'
+scheme: variable
+weight: 2
+is_default: false

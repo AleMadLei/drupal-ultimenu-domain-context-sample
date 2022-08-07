@@ -1,0 +1,8 @@
+uuid: ece20da5-e72b-45c5-bb6d-8a4f0a65e139
+langcode: en
+status: true
+dependencies: {  }
+id: image_block
+label: 'Image block'
+revision: 0
+description: ''

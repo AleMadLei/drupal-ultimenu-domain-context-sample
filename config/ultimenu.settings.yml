@@ -1,0 +1,18 @@
+blocks:
+  main-navigation: main-navigation
+  main-navigation-sub-1: main-navigation-sub-1
+  main-navigation-sub-2: main-navigation-sub-2
+  main-navigation-sub-3: main-navigation-sub-3
+regions:
+  ultimenu_main_navigation_homepage_shared_globally: ultimenu_main_navigation_homepage_shared_globally
+  ultimenu_main_navigation_link_2: ultimenu_main_navigation_link_2
+  ultimenu_main_navigation_sub_1_homepage_shared_globally: ultimenu_main_navigation_sub_1_homepage_shared_globally
+  ultimenu_main_navigation_sub_1_this_is_a_placeholder: ultimenu_main_navigation_sub_1_this_is_a_placeholder
+  ultimenu_main_navigation_sub_2_homepage_shared_globally: ultimenu_main_navigation_sub_2_homepage_shared_globally
+  ultimenu_main_navigation_sub_2_second_placeholder: ultimenu_main_navigation_sub_2_second_placeholder
+  ultimenu_main_navigation_sub_3_homepage_shared_globally: ultimenu_main_navigation_sub_3_homepage_shared_globally
+  ultimenu_main_navigation_sub_3_last_placeholder: ultimenu_main_navigation_sub_3_last_placeholder
+skins: ''
+fallback_text: ''
+ajaxmw: ''
+goodies: {  }

@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: ab8a3c0f-94eb-48f7-8abf-99aea894c9b6
+name: 'Drupal Ultimenu Domain Context Sample - Sub 3'
+mail: admin@admin.com
+slogan: 'This is subsite 3'
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en

@@ -1,0 +1,94 @@
+uuid: 5c8ebd6a-4a47-4a39-ba65-a437244188ba
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1899fe98-0bf6-48e4-90e1-c47fd2bafaf7'
+    - 'block_content:image_block:eba75f2f-eda4-4701-9140-40df72451fcd'
+  module:
+    - block_content
+    - domain
+    - ultimenu
+label: 'Sub 2 Blocks'
+name: sub_2_blocks
+group: Blocks
+description: 'Blocks for site 2'
+requireAllConditions: false
+disabled: false
+conditions:
+  domain:
+    id: domain
+    negate: false
+    uuid: 12069855-981f-4b8c-bab6-2eaa0a7f7329
+    context_mapping:
+      domain: '@domain.current_domain_context:domain'
+    domains:
+      sub2_dudcs_lndo_site: sub2_dudcs_lndo_site
+reactions:
+  blocks:
+    id: blocks
+    uuid: 55d3ec96-e86e-4b13-b985-7c2721c5a184
+    blocks:
+      72e9091d-5f2b-433e-b678-25194baaac88:
+        uuid: 72e9091d-5f2b-433e-b678-25194baaac88
+        id: 'ultimenu_block:ultimenu-main-navigation-sub-2'
+        label: 'Ultimenu: Main navigation Sub 2'
+        provider: ultimenu
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: ultimenu_block_ultimenu_main_navigation_sub_2
+        theme: test
+        css_class: ''
+        unique: 0
+        context_id: sub_2_blocks
+        context_mapping: {  }
+        ajaxify: null
+        regions: null
+        skin: module|ultimenu--dark
+        submenu: null
+        orientation: ultimenu--htb
+        submenu_position: null
+        canvas_off: null
+        canvas_on: null
+        canvas_skin: null
+        third_party_settings: {  }
+      1ef6e5a8-3fc0-42f7-92f2-9777679fd72f:
+        uuid: 1ef6e5a8-3fc0-42f7-92f2-9777679fd72f
+        id: 'block_content:eba75f2f-eda4-4701-9140-40df72451fcd'
+        label: '2'
+        provider: block_content
+        label_display: '0'
+        region: ultimenu_main_navigation_sub_2_homepage_shared_globally
+        weight: '0'
+        custom_id: block_content_eba75f2f_eda4_4701_9140_40df72451fcd
+        theme: test
+        css_class: ''
+        unique: 0
+        context_id: sub_2_blocks
+        context_mapping: {  }
+        status: true
+        info: ''
+        view_mode: full
+        third_party_settings: {  }
+      2df159f9-c612-4c55-9530-5ce2ccffd2c8:
+        uuid: 2df159f9-c612-4c55-9530-5ce2ccffd2c8
+        id: 'block_content:1899fe98-0bf6-48e4-90e1-c47fd2bafaf7'
+        label: '2 text'
+        provider: block_content
+        label_display: '0'
+        region: ultimenu_main_navigation_sub_2_second_placeholder
+        weight: '0'
+        custom_id: block_content_1899fe98_0bf6_48e4_90e1_c47fd2bafaf7
+        theme: test
+        css_class: ''
+        unique: 0
+        context_id: sub_2_blocks
+        context_mapping: {  }
+        status: true
+        info: ''
+        view_mode: full
+        third_party_settings: {  }
+    include_default_blocks: 1
+    saved: false
+weight: 0

@@ -1,0 +1,153 @@
+
+Ultimenu 8.x-2.0-dev, 2022-02-21
+--------------------------------
+- Added option to make regions available for all themes, except admin, to avoid
+  headaches during theme switching like at most devs.
+
+Ultimenu 8.x-2.0-dev, 2022-02-03
+--------------------------------
+- Issue #3261137 by wrd-oaitsd: Should _ultimenu_is_applicable check for a
+  block?
+
+Ultimenu 8.x-2.0-dev, 2022-01-08
+--------------------------------
+- Issue #3257435: Regression in 2.5 on clearing cache with drush per #3255786.
+
+Ultimenu 8.x-2.0-dev, 2021-12-29
+--------------------------------
+- Issue #3256279 by maddentim, gausarts: The service "ultimenu.skin" has a
+  dependency on a non-existent service "extension.path.resolver".
+
+Ultimenu 8.x-2.0-dev, 2021-12-24
+--------------------------------
+- Issue #3255786 by iampuma: Conflicts with group module updates.
+
+Ultimenu 8.x-2.0-dev, 2021-12-19
+--------------------------------
+- Issue #3224639 by ecvandenberg: Expanded mobile menu does not scroll due to
+  overflow hidden.
+- Fixed for D10 deprecation: jQuery.once.
+- Fixed for D10 deprecation: Twig spaceless and drupal_get_path().
+- Added Drupal ^10.
+- Fixed for compatibility with Jumper.module due to fixed positioning.
+- Made traversal more flexible to support potential HTML markups changes.
+
+Ultimenu 8.x-2.0-dev, 2020-06-21
+--------------------------------
+- Added hook_update for the newly added JavaScript libraries/ files.
+- Fixed for uncleaned resized flyouts.
+- Issue #3219813 by gausarts: Provide vanilla JavaScript alternative.
+- Changed display: none on flyouts to use the same rules as desktop's version to
+  replace slideToggle.
+- Fixed for desktop off-canvas with hidden hamburger when scrolled down.
+- Removed unwanted .ultimenu--dark-white float rules.
+- Micro-optimization: removed ultimenu_preprocess_block and
+  ultimenu_preprocess_region, and moved its contents into pre_render, etc.
+
+Ultimenu 8.x-2.0-dev, 2020-06-18
+--------------------------------
+- Issue #3201575 by Mark Shi: The expand Icon status is incorrect When I
+  double-click it.
+- Issue #3212881 by maskedjellybean: Warning: array_merge(): Expected parameter
+  2 to be an array, string given.
+
+Ultimenu 8.x-2.0-dev, 2020-06-22
+--------------------------------
+- Issue #3109089 by W01F, gausarts: Disable ajaxify for mobile.
+- Issue #3118207 by psf_: Call to undefined method
+  Drupal\\Core\\File\\FileSystem::scanDirectory().
+
+Ultimenu 8.x-2.0-dev, 2020-02-09
+--------------------------------
+- Issue #3109749 by lgcorredera: The links are generated with class="is-active"
+  when on the homepage.
+
+Ultimenu 8.x-2.0-dev, 2020-02-05
+--------------------------------
+- Updated deprecated @path.alias_storage for @path_alias.repository.
+
+Ultimenu 8.x-2.0-dev, 2020-01-15
+--------------------------------
+Issue #3106530 by gausarts, kappaluppa2@gmail.com: Links on site don'\''t work
+  when Ultimenu is enabled.
+
+Ultimenu 8.x-2.0-dev, 2020-01-12
+--------------------------------
+- Fixed for deprecated file_scan_directory.
+
+Ultimenu 8.x-2.0-dev, 2020-01-11
+--------------------------------
+- Issue #3067744 by gausarts, W01F, pyxio, codeelegance: Mobile hamburger menu
+  links highlight but don'\''t open.
+- Issue #3081999 by Mohammad Fayoumi: Replace :focus-within pseudo-class with
+  :focus in ultimenu.css file.
+- Issue #3085004 by mlanth, gausarts: Script removes all event handlers from
+  DOM body causing issues with other libraries.
+- Issue #3098436 by PaulDinelle: Incorrect aria-hidden tag on caret.
+
+Ultimenu 8.x-2.0-dev, 2019-04-30
+--------------------------------
+- Minor adjustments to the new clickable caret visible for 944px to 1025px.
+
+Ultimenu 8.x-2.0-dev, 2019-04-29
+--------------------------------
+- Reverted the media query for mobile menu from ~641px back to ~944px as being
+  problematic with more menu items without extra legs.
+- Added support for clickable menu item mobile to 1025px with hoverable flyout.
+- Moved non-essiantial CSS rules out from ultimenu.css to ultimenu.extras.css
+  so t disable it entirely via UI.
+- Updated CSS to support both desktop and mobile off-canvas.
+- Added option to enable off-canvas for both mobile and desktop.
+- Added off-canvas zoomin skin.
+- Updated ultimenu.html.twig to allow dynamic classes.
+- Cleaned up no-longer relevant stuffs for 2.x.
+
+Ultimenu 8.x-2.0-dev, 2019-04-28
+--------------------------------
+- Fixed for undefined request_path.
+
+Ultimenu 8.x-2.0-dev, 2019-04-27
+--------------------------------
+- Simplified AJAX URL.
+
+Ultimenu 8.x-2.0-dev, 2019-04-25
+--------------------------------
+- Fixed for ajaxified region options.
+- Fixed for schema.
+
+Ultimenu 8.x-2.0-dev, 2019-04-23
+--------------------------------
+- Added support to have a simple iconized title, check out STYLING.
+- Split ultimenu.css into ultimenu.hamburger.css and ultimenu.vertical.css to
+reduce complexity.
+
+Ultimenu 8.x-2.0-dev, 2019-04-22
+--------------------------------
+- Added off-canvas skins.
+- Added dark skins, and made it as default for cool people.
+- Renamed is-ultimenu-oc to is-ultimenu-canvas, is-ultimenu-oc-element to
+  is-ultimenu-canvas-off, is-ultimenu-oc-target to is-ultimenu-canvas-on
+  for clarity, and quick understanding.
+- Moved /skins folder to css/theme.
+- Renamed active-trail LI class to is-active-trail to match core.
+- Renamed js-ultimenu- classes to is-ultimenu- so to print it in HTML directly
+  not relying on JS, relevant for the new off-canvas menu.
+- Added option to selectively enable ajaxified regions.
+- Cleaned up CSS sample skins from old browser CSS prefixes.
+- Lowered the media query for mobile menu from ~944px to ~641px.
+- Added off-canvas menu to replace old sliding toggle approach.
+
+Ultimenu 8.x-2.0-dev, 2019-04-21
+--------------------------------
+- Split Ultimenu AJAX into ultimenu.ajax library to have correct library weight
+  and its optional dependencies.
+
+Ultimenu 8.x-2.0-dev, 2019-04-16
+--------------------------------
+- Added a new service UltimenuTree.
+- Fixed for empty ajaxified regions.
+- Few optimizations: added #pre_render, moved theme preprocess to #pre_render.
+
+Ultimenu 8.x-2.0-dev, 2019-04-16
+--------------------------------
+- Initial commit.

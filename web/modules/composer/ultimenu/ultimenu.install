@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the ultimenu module.
+ */
+
+/**
+ * Added new Ultimenu services.
+ */
+function ultimenu_update_8201() {
+  // Do nothing to clear cache.
+}
+
+/**
+ * Clearing cache to update for Drupal 9.
+ */
+function ultimenu_update_8202() {
+  // Do nothing to clear cache.
+}
+
+/**
+ * Clearing cache to apply the newly added JavaScript libraries/ files.
+ */
+function ultimenu_update_8203() {
+  // Do nothing to clear cache.
+}

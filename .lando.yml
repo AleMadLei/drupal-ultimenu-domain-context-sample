@@ -1,0 +1,22 @@
+name: dudcs
+recipe: pantheon
+config:
+  framework: drupal9
+  xdebug: false
+  edge: false
+  index: false
+services:
+  appserver:
+    build_as_root:
+      - apt install -y pv
+    run:
+      - composer install
+    overrides:
+      environment:
+        DRUSH_OPTIONS_URI: "http://dudcs.lndo.site"
+proxy:
+  appserver_nginx:
+    - dudcs.lndo.site
+    - sub1.dudcs.lndo.site
+    - sub2.dudcs.lndo.site
+    - sub3.dudcs.lndo.site

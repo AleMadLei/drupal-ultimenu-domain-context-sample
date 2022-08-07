@@ -1,0 +1,14 @@
+uuid: 65537e5b-67e4-4f84-b839-061f48fb05cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.sub3_dudcs_lndo_site
+  module:
+    - domain_access
+id: domain_access_remove_action.sub3_dudcs_lndo_site
+label: 'Remove selected content from the Sub Site 3 domain'
+type: node
+plugin: domain_access_remove_action
+configuration:
+  domain_id: sub3_dudcs_lndo_site

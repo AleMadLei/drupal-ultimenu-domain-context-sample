@@ -1,0 +1,14 @@
+uuid: 3968ad8f-40bd-451d-bfa5-54e67f8060fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.sub2_dudcs_lndo_site
+  module:
+    - domain_access
+id: domain_access_remove_editor_action.sub2_dudcs_lndo_site
+label: 'Remove editors from the Sub Site 2 domain'
+type: user
+plugin: domain_access_remove_editor_action
+configuration:
+  domain_id: sub2_dudcs_lndo_site

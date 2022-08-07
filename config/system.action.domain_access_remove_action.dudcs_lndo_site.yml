@@ -1,0 +1,14 @@
+uuid: 01108ba7-db6b-4670-8496-0fef5fda196b
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.dudcs_lndo_site
+  module:
+    - domain_access
+id: domain_access_remove_action.dudcs_lndo_site
+label: 'Remove selected content from the Main Site domain'
+type: node
+plugin: domain_access_remove_action
+configuration:
+  domain_id: dudcs_lndo_site

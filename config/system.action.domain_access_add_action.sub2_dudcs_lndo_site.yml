@@ -1,0 +1,14 @@
+uuid: d6377df8-aab8-403b-8ce9-a7d6a651c186
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.sub2_dudcs_lndo_site
+  module:
+    - domain_access
+id: domain_access_add_action.sub2_dudcs_lndo_site
+label: 'Add selected content to the Sub Site 2 domain'
+type: node
+plugin: domain_access_add_action
+configuration:
+  domain_id: sub2_dudcs_lndo_site

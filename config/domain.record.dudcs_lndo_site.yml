@@ -1,0 +1,11 @@
+uuid: 2b01e830-fe0b-4350-acf7-a21b0f47f712
+langcode: en
+status: true
+dependencies: {  }
+id: dudcs_lndo_site
+domain_id: 8772136
+hostname: dudcs.lndo.site
+name: 'Main Site'
+scheme: variable
+weight: 1
+is_default: true
